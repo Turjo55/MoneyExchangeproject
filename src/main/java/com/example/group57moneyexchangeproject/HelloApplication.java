@@ -1,4 +1,4 @@
-package com.example.oopmoneyexchangeproject;
+package com.example.group57moneyexchangeproject;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

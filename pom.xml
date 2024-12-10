@@ -5,9 +5,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.example</groupId>
-  <artifactId>OopMoneyExchangeProject</artifactId>
+  <artifactId>Group57MoneyExchangeProject</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>OopMoneyExchangeProject</name>
+  <name>Group57MoneyExchangeProject</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -58,7 +58,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>com.example.oopmoneyexchangeproject/com.example.oopmoneyexchangeproject.HelloApplication</mainClass>
+              <mainClass>com.example.group57moneyexchangeproject/com.example.group57moneyexchangeproject.HelloApplication</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>
