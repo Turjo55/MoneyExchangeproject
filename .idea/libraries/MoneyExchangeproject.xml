@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="MoneyExchangeproject">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/MoneyExchange/src/main/java" />
+      <root url="file://$PROJECT_DIR$/OopMoneyExchangeProject/src/main/java" />
+    </SOURCES>
+  </library>
+</component>
