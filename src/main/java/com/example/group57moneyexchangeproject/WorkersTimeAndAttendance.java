@@ -24,7 +24,6 @@ public class WorkersTimeAndAttendance {
 
     @FXML
     private void initialize() {
-        // Set up ToggleGroup for RadioButtons
         toggleGroup = new ToggleGroup();
         checkInRadioButton.setToggleGroup(toggleGroup);
         checkOutRadioButton.setToggleGroup(toggleGroup);

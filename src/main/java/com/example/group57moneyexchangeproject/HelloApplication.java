@@ -9,7 +9,7 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("employeePerformance.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeLeaveApplications.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Employee Onboarding");
         stage.setScene(scene);

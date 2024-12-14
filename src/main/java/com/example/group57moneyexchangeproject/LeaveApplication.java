@@ -1,80 +1,73 @@
 package com.example.group57moneyexchangeproject;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 public class LeaveApplication {
-    private String name;
-    private String id;
-    private int days;
-    private String department;
-    private String reason;
-    private String status;
+    private final SimpleStringProperty name;
+    private final SimpleStringProperty id;
+    private final SimpleIntegerProperty days;
+    private final SimpleStringProperty department;
+    private final SimpleStringProperty reason;
+    private final SimpleStringProperty status;
 
+    // Constructor
     public LeaveApplication(String name, String id, int days, String department, String reason, String status) {
-        this.name = name;
-        this.id = id;
-        this.days = days;
-        this.department = department;
-        this.reason = reason;
-        this.status = status;
+        this.name = new SimpleStringProperty(name);
+        this.id = new SimpleStringProperty(id);
+        this.days = new SimpleIntegerProperty(days);
+        this.department = new SimpleStringProperty(department);
+        this.reason = new SimpleStringProperty(reason);
+        this.status = new SimpleStringProperty(status);
     }
 
-    // Getters and Setters
+    // Getters
     public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        return name.get();
     }
 
     public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+        return id.get();
     }
 
     public int getDays() {
-        return days;
-    }
-
-    public void setDays(int days) {
-        this.days = days;
+        return days.get();
     }
 
     public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
+        return department.get();
     }
 
     public String getReason() {
-        return reason;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason;
+        return reason.get();
     }
 
     public String getStatus() {
-        return status;
+        return status.get();
+    }
+
+    // Setters (if needed)
+    public void setName(String name) {
+        this.name.set(name);
+    }
+
+    public void setId(String id) {
+        this.id.set(id);
+    }
+
+    public void setDays(int days) {
+        this.days.set(days);
+    }
+
+    public void setDepartment(String department) {
+        this.department.set(department);
+    }
+
+    public void setReason(String reason) {
+        this.reason.set(reason);
     }
 
     public void setStatus(String status) {
-        this.status = status;
-    }
-
-    @Override
-    public String toString() {
-        return "LeaveApplication{" +
-                "name='" + name + '\'' +
-                ", id='" + id + '\'' +
-                ", days=" + days +
-                ", department='" + department + '\'' +
-                ", reason='" + reason + '\'' +
-                ", status='" + status + '\'' +
-                '}';
+        this.status.set(status);
     }
 }
