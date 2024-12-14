@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Alert.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Alert.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">group57moneyexchangeproject</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">fxml</span><span class="s2">.</span><span class="s1">FXML</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">awt</span><span class="s2">.</span><span class="s1">event</span><span class="s2">.</span><span class="s1">ActionEvent</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Alert </span><span class="s2">{</span>
+    <span class="s0">public static </span><span class="s1">Object Alert</span><span class="s2">;</span>
+
+    <span class="s3">// Other methods and fields</span>
+
+    <span class="s0">private void </span><span class="s1">showErrorAlert</span><span class="s2">(</span><span class="s1">String title</span><span class="s2">, </span><span class="s1">String message</span><span class="s2">) {</span>
+        <span class="s3">// Create the error alert</span>
+        <span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">control</span><span class="s2">.</span><span class="s1">Alert alert </span><span class="s2">= </span><span class="s0">new </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">control</span><span class="s2">.</span><span class="s1">Alert</span><span class="s2">(</span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">control</span><span class="s2">.</span><span class="s1">Alert</span><span class="s2">.</span><span class="s1">AlertType</span><span class="s2">.</span><span class="s1">ERROR</span><span class="s2">);</span>
+
+        <span class="s3">// Set the title and content text of the alert</span>
+        <span class="s1">alert</span><span class="s2">.</span><span class="s1">setTitle</span><span class="s2">(</span><span class="s1">title</span><span class="s2">);</span>
+        <span class="s1">alert</span><span class="s2">.</span><span class="s1">setHeaderText</span><span class="s2">(</span><span class="s0">null</span><span class="s2">);  </span><span class="s3">// No header</span>
+        <span class="s1">alert</span><span class="s2">.</span><span class="s1">setContentText</span><span class="s2">(</span><span class="s1">message</span><span class="s2">);  </span><span class="s3">// Set the message</span>
+
+        <span class="s3">// Show and wait for the user to close the alert</span>
+        <span class="s1">alert</span><span class="s2">.</span><span class="s1">showAndWait</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Example usage in another method</span>
+    <span class="s1">@FXML</span>
+    <span class="s0">private void </span><span class="s1">addPerformanceScoreButton</span><span class="s2">(</span><span class="s1">ActionEvent event</span><span class="s2">) {</span>
+        <span class="s1">String name </span><span class="s2">= </span><span class="s4">&quot;nameTextField.getText()&quot;</span><span class="s2">;</span>
+        <span class="s1">String code </span><span class="s2">= </span><span class="s4">&quot;codeTextField.getText()&quot;</span><span class="s2">;</span>
+        <span class="s1">String score </span><span class="s2">= </span><span class="s4">&quot;scoreTextField.getText()&quot;</span><span class="s2">;</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">name</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">() || </span><span class="s1">code</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">() || </span><span class="s1">score</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">()) {</span>
+            <span class="s1">showErrorAlert</span><span class="s2">(</span><span class="s4">&quot;Invalid Input&quot;</span><span class="s2">, </span><span class="s4">&quot;All fields must be filled.&quot;</span><span class="s2">);</span>
+            <span class="s0">return</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s3">// Add performance score logic</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">Alert</span><span class="s2">(</span><span class="s1">String title</span><span class="s2">) {</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

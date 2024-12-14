@@ -1,0 +1,135 @@
+<html>
+<head>
+<title>employeePerformance.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+employeePerformance.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">group57moneyexchangeproject</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">collections</span><span class="s2">.</span><span class="s1">FXCollections</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">collections</span><span class="s2">.</span><span class="s1">ObservableList</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">event</span><span class="s2">.</span><span class="s1">ActionEvent</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">fxml</span><span class="s2">.</span><span class="s1">FXML</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">control</span><span class="s2">.</span><span class="s1">Alert</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">control</span><span class="s2">.</span><span class="s1">TableColumn</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">control</span><span class="s2">.</span><span class="s1">TableView</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">scene</span><span class="s2">.</span><span class="s1">control</span><span class="s2">.</span><span class="s1">TextField</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">employeePerformance </span><span class="s2">{</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">private </span><span class="s1">TextField nameTextField</span><span class="s2">;</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">private </span><span class="s1">TextField codeTextField</span><span class="s2">;</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">private </span><span class="s1">TextField scoreTextField</span><span class="s2">;</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">private </span><span class="s1">TableView</span><span class="s2">&lt;</span><span class="s1">Performance</span><span class="s2">&gt; </span><span class="s1">addPerformanceScoreTableView</span><span class="s2">;</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">private </span><span class="s1">TableColumn</span><span class="s2">&lt;</span><span class="s1">Performance</span><span class="s2">, </span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">nameTableColumn</span><span class="s2">;</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">private </span><span class="s1">TableColumn</span><span class="s2">&lt;</span><span class="s1">Performance</span><span class="s2">, </span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">codeTableColumn</span><span class="s2">;</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">private </span><span class="s1">TableColumn</span><span class="s2">&lt;</span><span class="s1">Performance</span><span class="s2">, </span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">scoreTableColumn</span><span class="s2">;</span>
+
+    <span class="s0">private </span><span class="s1">ObservableList</span><span class="s2">&lt;</span><span class="s1">Performance</span><span class="s2">&gt; </span><span class="s1">performanceList </span><span class="s2">= </span><span class="s1">FXCollections</span><span class="s2">.</span><span class="s1">observableArrayList</span><span class="s2">();</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">private void </span><span class="s1">initialize</span><span class="s2">() {</span>
+        <span class="s3">// Bind TableView columns to Performance properties</span>
+        <span class="s1">nameTableColumn</span><span class="s2">.</span><span class="s1">setCellValueFactory</span><span class="s2">(</span><span class="s1">cellData -&gt; cellData</span><span class="s2">.</span><span class="s1">getValue</span><span class="s2">().</span><span class="s1">nameProperty</span><span class="s2">());</span>
+        <span class="s1">codeTableColumn</span><span class="s2">.</span><span class="s1">setCellValueFactory</span><span class="s2">(</span><span class="s1">cellData -&gt; cellData</span><span class="s2">.</span><span class="s1">getValue</span><span class="s2">().</span><span class="s1">codeProperty</span><span class="s2">());</span>
+        <span class="s1">scoreTableColumn</span><span class="s2">.</span><span class="s1">setCellValueFactory</span><span class="s2">(</span><span class="s1">cellData -&gt; cellData</span><span class="s2">.</span><span class="s1">getValue</span><span class="s2">().</span><span class="s1">scoreProperty</span><span class="s2">());</span>
+
+        <span class="s3">// Set the TableView's data source</span>
+        <span class="s1">addPerformanceScoreTableView</span><span class="s2">.</span><span class="s1">setItems</span><span class="s2">(</span><span class="s1">performanceList</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@FXML</span>
+    <span class="s0">private void </span><span class="s1">addPerformanceScoreButton</span><span class="s2">(</span><span class="s1">ActionEvent event</span><span class="s2">) {</span>
+        <span class="s1">String name </span><span class="s2">= </span><span class="s1">nameTextField</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">().</span><span class="s1">trim</span><span class="s2">();</span>
+        <span class="s1">String code </span><span class="s2">= </span><span class="s1">codeTextField</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">().</span><span class="s1">trim</span><span class="s2">();</span>
+        <span class="s1">String score </span><span class="s2">= </span><span class="s1">scoreTextField</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">().</span><span class="s1">trim</span><span class="s2">();</span>
+
+        <span class="s3">// Check if any field is empty</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">name</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">() || </span><span class="s1">code</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">() || </span><span class="s1">score</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">()) {</span>
+            <span class="s1">showErrorAlert</span><span class="s2">(</span><span class="s4">&quot;Invalid Input&quot;</span><span class="s2">, </span><span class="s4">&quot;All fields must be filled.&quot;</span><span class="s2">);</span>
+            <span class="s0">return</span><span class="s2">;  </span><span class="s3">// Don't proceed if inputs are empty</span>
+        <span class="s2">}</span>
+
+        <span class="s3">// Add performance score to the list</span>
+        <span class="s1">Performance newPerformance </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Performance</span><span class="s2">(</span><span class="s1">name</span><span class="s2">, </span><span class="s1">code</span><span class="s2">, </span><span class="s1">score</span><span class="s2">);</span>
+        <span class="s1">performanceList</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">newPerformance</span><span class="s2">);</span>
+
+        <span class="s3">// Clear input fields after adding performance score</span>
+        <span class="s1">nameTextField</span><span class="s2">.</span><span class="s1">clear</span><span class="s2">();</span>
+        <span class="s1">codeTextField</span><span class="s2">.</span><span class="s1">clear</span><span class="s2">();</span>
+        <span class="s1">scoreTextField</span><span class="s2">.</span><span class="s1">clear</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private void </span><span class="s1">showErrorAlert</span><span class="s2">(</span><span class="s1">String title</span><span class="s2">, </span><span class="s1">String message</span><span class="s2">) {</span>
+        <span class="s1">Alert alert </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Alert</span><span class="s2">(</span><span class="s1">Alert</span><span class="s2">.</span><span class="s1">AlertType</span><span class="s2">.</span><span class="s1">ERROR</span><span class="s2">);</span>
+        <span class="s1">alert</span><span class="s2">.</span><span class="s1">setTitle</span><span class="s2">(</span><span class="s1">title</span><span class="s2">);</span>
+        <span class="s1">alert</span><span class="s2">.</span><span class="s1">setHeaderText</span><span class="s2">(</span><span class="s0">null</span><span class="s2">);  </span><span class="s3">// No header text</span>
+        <span class="s1">alert</span><span class="s2">.</span><span class="s1">setContentText</span><span class="s2">(</span><span class="s1">message</span><span class="s2">);  </span><span class="s3">// Set error message</span>
+        <span class="s1">alert</span><span class="s2">.</span><span class="s1">showAndWait</span><span class="s2">();  </span><span class="s3">// Show the alert and wait for the user to close it</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Inner class for performance data</span>
+    <span class="s0">public static class </span><span class="s1">Performance </span><span class="s2">{</span>
+        <span class="s0">private final </span><span class="s1">String name</span><span class="s2">;</span>
+        <span class="s0">private final </span><span class="s1">String code</span><span class="s2">;</span>
+        <span class="s0">private final </span><span class="s1">String score</span><span class="s2">;</span>
+
+        <span class="s0">public </span><span class="s1">Performance</span><span class="s2">(</span><span class="s1">String name</span><span class="s2">, </span><span class="s1">String code</span><span class="s2">, </span><span class="s1">String score</span><span class="s2">) {</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">name </span><span class="s2">= </span><span class="s1">name</span><span class="s2">;</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">code </span><span class="s2">= </span><span class="s1">code</span><span class="s2">;</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">score </span><span class="s2">= </span><span class="s1">score</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s0">public </span><span class="s1">String getName</span><span class="s2">() {</span>
+            <span class="s0">return </span><span class="s1">name</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s0">public </span><span class="s1">String getCode</span><span class="s2">() {</span>
+            <span class="s0">return </span><span class="s1">code</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s0">public </span><span class="s1">String getScore</span><span class="s2">() {</span>
+            <span class="s0">return </span><span class="s1">score</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s3">// JavaFX property bindings for TableView</span>
+        <span class="s0">public </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">beans</span><span class="s2">.</span><span class="s1">property</span><span class="s2">.</span><span class="s1">StringProperty nameProperty</span><span class="s2">() {</span>
+            <span class="s0">return new </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">beans</span><span class="s2">.</span><span class="s1">property</span><span class="s2">.</span><span class="s1">SimpleStringProperty</span><span class="s2">(</span><span class="s1">name</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+        <span class="s0">public </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">beans</span><span class="s2">.</span><span class="s1">property</span><span class="s2">.</span><span class="s1">StringProperty codeProperty</span><span class="s2">() {</span>
+            <span class="s0">return new </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">beans</span><span class="s2">.</span><span class="s1">property</span><span class="s2">.</span><span class="s1">SimpleStringProperty</span><span class="s2">(</span><span class="s1">code</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+        <span class="s0">public </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">beans</span><span class="s2">.</span><span class="s1">property</span><span class="s2">.</span><span class="s1">StringProperty scoreProperty</span><span class="s2">() {</span>
+            <span class="s0">return new </span><span class="s1">javafx</span><span class="s2">.</span><span class="s1">beans</span><span class="s2">.</span><span class="s1">property</span><span class="s2">.</span><span class="s1">SimpleStringProperty</span><span class="s2">(</span><span class="s1">score</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>

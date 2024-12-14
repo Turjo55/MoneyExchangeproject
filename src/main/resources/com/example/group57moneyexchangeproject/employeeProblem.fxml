@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group57moneyexchangeproject.EmployeeProblem">
+   <children>
+      <TextField fx:id="complaintIdTextField" layoutX="112.0" layoutY="46.0" />
+      <TextField fx:id="complaintTextTextField" layoutX="112.0" layoutY="107.0" />
+      <TextField fx:id="employeeNameTextField" layoutX="408.0" layoutY="46.0" />
+      <Label fx:id="complaintIdLabel" layoutX="31.0" layoutY="50.0" text="Complaint ID:" />
+      <Label fx:id="complaintTextLabel" layoutX="14.0" layoutY="111.0" text="Complaint Text:" />
+      <Label fx:id="employeeNameLabel" layoutX="309.0" layoutY="50.0" text="Employee Name:" />
+      <Button layoutX="257.0" layoutY="145.0" mnemonicParsing="false" onAction="#EmployeeComplaint" text="Employee Complaints" />
+      <TableView fx:id="employeeComplaintsTableView" layoutX="41.0" layoutY="183.0" prefHeight="200.0" prefWidth="511.0">
+        <columns>
+          <TableColumn fx:id="ComplaintIdTableColumn" prefWidth="184.0" text="Complaint ID" />
+          <TableColumn fx:id="employeeNameTableColumn" prefWidth="181.99996948242188" text="Employee Name" />
+            <TableColumn fx:id="complaintTextTableColumn" prefWidth="144.66668701171875" text="Complaint Text:" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
